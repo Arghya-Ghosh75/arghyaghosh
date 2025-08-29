@@ -8,54 +8,54 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 248 250 252; /* slate-50 */
-    --foreground: 15 23 42; /* slate-800 */
+    /* Core Colors - Clean White/Black Theme */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 0 0% 9%; /* Near black */
     
     /* Card System */
-    --card: 255 255 255; /* white */
-    --card-foreground: 15 23 42; /* slate-800 */
-    --card-border: 226 232 240; /* slate-200 */
+    --card: 0 0% 100%; /* Pure white */
+    --card-foreground: 0 0% 9%; /* Near black */
+    --card-border: 0 0% 90%; /* Light gray */
     
     /* Primary Brand - Electric Blue */
-    --primary: 219 83% 62%; /* blue-500 */
-    --primary-foreground: 248 250 252; /* slate-50 */
-    --primary-glow: 219 83% 72%; /* lighter blue */
+    --primary: 217 91% 60%; /* Clean blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --primary-glow: 217 91% 70%; /* Lighter blue */
     
     /* Secondary - Teal Accent */
-    --secondary: 180 83% 46%; /* teal-500 */
-    --secondary-foreground: 255 255 255;
+    --secondary: 173 80% 40%; /* Clean teal */
+    --secondary-foreground: 0 0% 100%; /* White */
     
     /* Neutral Grays */
-    --muted: 241 245 249; /* slate-100 */
-    --muted-foreground: 100 116 139; /* slate-500 */
+    --muted: 0 0% 96%; /* Very light gray */
+    --muted-foreground: 0 0% 45%; /* Medium gray */
     
     /* Accent - Violet */
-    --accent: 262 83% 68%; /* violet-500 */
-    --accent-foreground: 255 255 255;
+    --accent: 262 83% 58%; /* Clean violet */
+    --accent-foreground: 0 0% 100%; /* White */
     
     /* Destructive */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 255 255 255;
+    --destructive-foreground: 0 0% 100%;
     
     /* Borders & Inputs */
-    --border: 226 232 240; /* slate-200 */
-    --input: 226 232 240; /* slate-200 */
-    --ring: 219 83% 62%; /* primary */
+    --border: 0 0% 90%; /* Light gray */
+    --input: 0 0% 90%; /* Light gray */
+    --ring: 217 91% 60%; /* Primary blue */
     
     /* Glass Effect */
-    --glass-bg: 255 255 255;
-    --glass-border: 226 232 240;
+    --glass-bg: 0 0% 100%; /* White */
+    --glass-border: 0 0% 90%; /* Light gray */
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(219 83% 62%), hsl(262 83% 68%));
-    --gradient-secondary: linear-gradient(135deg, hsl(180 83% 46%), hsl(219 83% 62%));
-    --gradient-bg: linear-gradient(135deg, hsl(248 250 252) 0%, hsl(241 245 249) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(173 80% 40%), hsl(217 91% 60%));
+    --gradient-bg: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
     
     /* Shadows */
-    --shadow-elegant: 0 10px 25px -3px hsl(219 83% 62% / 0.1), 0 4px 6px -2px hsl(219 83% 62% / 0.05);
-    --shadow-glow: 0 0 0 1px hsl(219 83% 62% / 0.1), 0 0 20px hsl(219 83% 62% / 0.2);
-    --shadow-card: 0 1px 3px 0 hsl(15 23 42 / 0.1), 0 1px 2px 0 hsl(15 23 42 / 0.06);
+    --shadow-elegant: 0 10px 25px -3px hsl(217 91% 60% / 0.1), 0 4px 6px -2px hsl(217 91% 60% / 0.05);
+    --shadow-glow: 0 0 0 1px hsl(217 91% 60% / 0.1), 0 0 20px hsl(217 91% 60% / 0.2);
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
     
     /* Animation */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -81,54 +81,54 @@
   }
 
   .dark {
-    /* Dark Mode Colors */
-    --background: 15 23 42; /* slate-800 */
-    --foreground: 248 250 252; /* slate-50 */
+    /* Dark Mode Colors - Clean Black/White Theme */
+    --background: 0 0% 9%; /* Near black */
+    --foreground: 0 0% 100%; /* Pure white */
     
     /* Card System */
-    --card: 30 41 59; /* slate-700 */
-    --card-foreground: 248 250 252; /* slate-50 */
-    --card-border: 51 65 85; /* slate-600 */
+    --card: 0 0% 12%; /* Dark gray */
+    --card-foreground: 0 0% 100%; /* Pure white */
+    --card-border: 0 0% 20%; /* Medium dark gray */
     
     /* Primary - Electric Blue (stays vibrant) */
-    --primary: 219 83% 62%; /* blue-500 */
-    --primary-foreground: 15 23 42; /* slate-800 */
-    --primary-glow: 219 83% 72%; /* lighter blue */
+    --primary: 217 91% 60%; /* Clean blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --primary-glow: 217 91% 70%; /* Lighter blue */
     
     /* Secondary - Teal */
-    --secondary: 180 83% 46%; /* teal-500 */
-    --secondary-foreground: 15 23 42; /* slate-800 */
+    --secondary: 173 80% 40%; /* Clean teal */
+    --secondary-foreground: 0 0% 100%; /* White */
     
     /* Neutral Grays */
-    --muted: 51 65 85; /* slate-600 */
-    --muted-foreground: 148 163 184; /* slate-400 */
+    --muted: 0 0% 18%; /* Dark gray */
+    --muted-foreground: 0 0% 65%; /* Light gray */
     
     /* Accent - Violet */
-    --accent: 262 83% 68%; /* violet-500 */
-    --accent-foreground: 15 23 42; /* slate-800 */
+    --accent: 262 83% 58%; /* Clean violet */
+    --accent-foreground: 0 0% 100%; /* White */
     
     /* Destructive */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 248 250 252;
+    --destructive-foreground: 0 0% 100%;
     
     /* Borders & Inputs */
-    --border: 51 65 85; /* slate-600 */
-    --input: 51 65 85; /* slate-600 */
-    --ring: 219 83% 62%; /* primary */
+    --border: 0 0% 20%; /* Medium dark gray */
+    --input: 0 0% 20%; /* Medium dark gray */
+    --ring: 217 91% 60%; /* Primary blue */
     
     /* Glass Effect */
-    --glass-bg: 30 41 59; /* slate-700 */
-    --glass-border: 51 65 85; /* slate-600 */
+    --glass-bg: 0 0% 12%; /* Dark gray */
+    --glass-border: 0 0% 20%; /* Medium dark gray */
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(219 83% 62%), hsl(262 83% 68%));
-    --gradient-secondary: linear-gradient(135deg, hsl(180 83% 46%), hsl(219 83% 62%));
-    --gradient-bg: linear-gradient(135deg, hsl(15 23 42) 0%, hsl(30 41 59) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(173 80% 40%), hsl(217 91% 60%));
+    --gradient-bg: linear-gradient(135deg, hsl(0 0% 9%) 0%, hsl(0 0% 12%) 100%);
     
     /* Shadows */
-    --shadow-elegant: 0 10px 25px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.1);
-    --shadow-glow: 0 0 0 1px hsl(219 83% 62% / 0.2), 0 0 20px hsl(219 83% 62% / 0.3);
-    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.2), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-elegant: 0 10px 25px -3px hsl(0 0% 0% / 0.5), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 0 1px hsl(217 91% 60% / 0.3), 0 0 20px hsl(217 91% 60% / 0.4);
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.4), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
   }
 }
 
