@@ -1,42 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Portfolio Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Core Brand Colors */
+    --background: 248 250 252; /* slate-50 */
+    --foreground: 15 23 42; /* slate-800 */
+    
+    /* Card System */
+    --card: 255 255 255; /* white */
+    --card-foreground: 15 23 42; /* slate-800 */
+    --card-border: 226 232 240; /* slate-200 */
+    
+    /* Primary Brand - Electric Blue */
+    --primary: 219 83% 62%; /* blue-500 */
+    --primary-foreground: 248 250 252; /* slate-50 */
+    --primary-glow: 219 83% 72%; /* lighter blue */
+    
+    /* Secondary - Teal Accent */
+    --secondary: 180 83% 46%; /* teal-500 */
+    --secondary-foreground: 255 255 255;
+    
+    /* Neutral Grays */
+    --muted: 241 245 249; /* slate-100 */
+    --muted-foreground: 100 116 139; /* slate-500 */
+    
+    /* Accent - Violet */
+    --accent: 262 83% 68%; /* violet-500 */
+    --accent-foreground: 255 255 255;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 255 255 255;
+    
+    /* Borders & Inputs */
+    --border: 226 232 240; /* slate-200 */
+    --input: 226 232 240; /* slate-200 */
+    --ring: 219 83% 62%; /* primary */
+    
+    /* Glass Effect */
+    --glass-bg: 255 255 255;
+    --glass-border: 226 232 240;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(219 83% 62%), hsl(262 83% 68%));
+    --gradient-secondary: linear-gradient(135deg, hsl(180 83% 46%), hsl(219 83% 62%));
+    --gradient-bg: linear-gradient(135deg, hsl(248 250 252) 0%, hsl(241 245 249) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 25px -3px hsl(219 83% 62% / 0.1), 0 4px 6px -2px hsl(219 83% 62% / 0.05);
+    --shadow-glow: 0 0 0 1px hsl(219 83% 62% / 0.1), 0 0 20px hsl(219 83% 62% / 0.2);
+    --shadow-card: 0 1px 3px 0 hsl(15 23 42 / 0.1), 0 1px 2px 0 hsl(15 23 42 / 0.06);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +81,54 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark Mode Colors */
+    --background: 15 23 42; /* slate-800 */
+    --foreground: 248 250 252; /* slate-50 */
+    
+    /* Card System */
+    --card: 30 41 59; /* slate-700 */
+    --card-foreground: 248 250 252; /* slate-50 */
+    --card-border: 51 65 85; /* slate-600 */
+    
+    /* Primary - Electric Blue (stays vibrant) */
+    --primary: 219 83% 62%; /* blue-500 */
+    --primary-foreground: 15 23 42; /* slate-800 */
+    --primary-glow: 219 83% 72%; /* lighter blue */
+    
+    /* Secondary - Teal */
+    --secondary: 180 83% 46%; /* teal-500 */
+    --secondary-foreground: 15 23 42; /* slate-800 */
+    
+    /* Neutral Grays */
+    --muted: 51 65 85; /* slate-600 */
+    --muted-foreground: 148 163 184; /* slate-400 */
+    
+    /* Accent - Violet */
+    --accent: 262 83% 68%; /* violet-500 */
+    --accent-foreground: 15 23 42; /* slate-800 */
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 248 250 252;
+    
+    /* Borders & Inputs */
+    --border: 51 65 85; /* slate-600 */
+    --input: 51 65 85; /* slate-600 */
+    --ring: 219 83% 62%; /* primary */
+    
+    /* Glass Effect */
+    --glass-bg: 30 41 59; /* slate-700 */
+    --glass-border: 51 65 85; /* slate-600 */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(219 83% 62%), hsl(262 83% 68%));
+    --gradient-secondary: linear-gradient(135deg, hsl(180 83% 46%), hsl(219 83% 62%));
+    --gradient-bg: linear-gradient(135deg, hsl(15 23 42) 0%, hsl(30 41 59) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 25px -3px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 0 1px hsl(219 83% 62% / 0.2), 0 0 20px hsl(219 83% 62% / 0.3);
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.2), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
   }
 }
 
@@ -100,6 +138,100 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Glass Effect Cards */
+  .glass-card {
+    background: hsl(var(--glass-bg) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border) / 0.2);
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Gradient Backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .bg-gradient-bg {
+    background: var(--gradient-bg);
+  }
+  
+  /* Animated Background */
+  .animated-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animated-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      hsl(var(--primary) / 0.02) 0%,
+      transparent 20%,
+      hsl(var(--accent) / 0.02) 40%,
+      transparent 60%,
+      hsl(var(--secondary) / 0.02) 80%,
+      transparent 100%
+    );
+    animation: shimmer 15s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes shimmer {
+    0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animated-bg::before {
+      animation: none;
+    }
+    
+    .hover-lift {
+      transition: none;
+    }
+    
+    .hover-lift:hover {
+      transform: none;
+    }
+    
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
