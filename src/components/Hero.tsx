@@ -127,7 +127,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-primary rounded-full p-1 hover-glow transition-all duration-500 hover:scale-105 animate-float">
                   <div className="w-full h-full rounded-full bg-background p-3">
                     <img
-                      src="/profile-picture.png"
+                      src="/profile-picture.jpg"
                       alt="Arghya Ghosh - Full-Stack Architect"
                       className="w-full h-full object-cover rounded-full"
                     />
