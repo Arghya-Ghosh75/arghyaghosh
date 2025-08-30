@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useToast } from "@/hooks/use-toast"
+import emailjs from '@emailjs/browser'
 import { 
   Mail, 
   Phone, 
@@ -58,9 +59,22 @@ export function Contact() {
 
     setIsSubmitting(true)
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      // Initialize EmailJS with public key
+      emailjs.init("lgqXcG9ojGmu8I9s2")
+      
+      // Send email via EmailJS
+      await emailjs.send(
+        'service_vg42gue', // Service ID
+        'template_dtnp3ar', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Arghya Ghosh'
+        }
+      )
+
       toast({
         title: "Message Sent!",
         description: "Thanks! I'll get back to you within 24-48 hours.",
@@ -74,7 +88,17 @@ export function Contact() {
         message: "",
         consent: false
       })
-    }, 2000)
+    } catch (error) {
+      console.error('EmailJS error:', error)
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or email me directly.",
+        variant: "destructive",
+        duration: 5000,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
