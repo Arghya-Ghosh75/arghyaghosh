@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github, Filter } from "lucide-react"
+import extensionImage from "../assets/images/extension.jpeg";
+import ecomImage from "../assets/images/EcomImage.jpeg";
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState("All")
@@ -11,21 +13,21 @@ export function Projects() {
     {
       title: "E-Commerce Website",
       description: "Full-stack storefront with product listings, cart/checkout functionality, and responsive UI design. Features user authentication, payment integration, and admin dashboard.",
-      image: "/api/placeholder/400/250",
+      image: ecomImage,
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       category: "Web",
-      liveDemo: "#",
-      github: "#",
+      liveDemo: "https://shopittt.netlify.app/",
+      github: "https://github.com/Arghya-Ghosh75/Shop-it.git",
       featured: true
     },
     {
-      title: "YouTube Clone",
-      description: "Video listing and search interface with clean player page and responsive layout. Implements video streaming, user subscriptions, and comment system.",
-      image: "/api/placeholder/400/250",
+      title: "Browser Extension",
+      description: "A custom-built browser extension designed to enhance productivity and streamline everyday browsing tasks, user subscriptions, and comment system.",
+      image: extensionImage,
       technologies: ["React", "Express", "MySQL", "AWS"],
       category: "Web",
-      liveDemo: "#",
-      github: "#",
+      liveDemo: "https://aurabrowserextension.netlify.app",
+      github: "https://github.com/Arghya-Ghosh75/Aura.git",
       featured: true
     },
     {
@@ -108,12 +110,14 @@ export function Projects() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden">
-                <div className="w-full h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <div className="text-6xl opacity-30">📱</div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-              </div>
+<div className="relative overflow-hidden">
+  <img
+    src={project.image}
+    alt={project.title}
+    className="w-full h-48 object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+</div>
 
               <CardHeader>
                 <div className="flex items-start justify-between">
@@ -141,16 +145,33 @@ export function Projects() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3 pt-2">
-                  <Button size="sm" className="flex-1 bg-gradient-primary hover:opacity-90">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="flex-1">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </Button>
-                </div>
+               <div className="flex gap-3 pt-2">
+
+  <a 
+    href={project.liveDemo} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex-1"
+  >
+    <Button size="sm" className="w-full bg-gradient-primary hover:opacity-90">
+      <ExternalLink className="mr-2 h-4 w-4" />
+      Live Demo
+    </Button>
+  </a>
+
+  <a 
+    href={project.github} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex-1"
+  >
+    <Button size="sm" variant="outline" className="w-full">
+      <Github className="mr-2 h-4 w-4" />
+      Code
+    </Button>
+  </a>
+
+</div>
               </CardContent>
             </Card>
           ))}
